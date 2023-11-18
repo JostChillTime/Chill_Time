@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact_Us</title>
+    <link rel="stylesheet" href="/static/contact_us/css/contact_us.css">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" >
+            {% csrf_token %}
+            <h1>Contact Us</h1>
+            <input type="text" name="name" id="firstName" placeholder="First Name" required>
+            <input type="text" name="last_name" id="lastName" placeholder="Last Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <h4>Type Your Message Here...</h4>
+            <textarea name="text" required></textarea>
+            <input type="submit" value="Send" id="button">
+            <a href="{% url 'index' %}" class="go beck">Go back</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/index/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Verdana">
+    <script src="https://kit.fontawesome.com/8a134efa8c.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ChillTime</title>
+</head>
+<body>
+
+    <section>
+
+        <!-- HEADER AND LINKS -->
+
+        <header>
+            <div class="pc_header">
+                <div class="header_link">
+                    <div class="home-sci">
+                        <a href="https://t.me/+9P9p2BiybwwyZWZi "><i class='bx bxl-telegram header-icon'></i></a>
+                        <p>Telegram</p>
+                    </div>
+                </div>
+
+                <div id="square-quote">
+                    <p>ChillTime</p>
+                </div>
+
+
+                <div class="header_link">
+                    <div class="home-sci">
+                        <a href="https://discord.gg/UYZDYfTA"><i class='bx bxl-discord header-icon'></i></a>
+                        <p>Discord</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone_header">
+                <div id="square-quote" class="phone_header_square_quote">
+                    <p>ChillTime</p>
+                </div>
+
+                <div class="phone_header_link_container">
+                        <div class="header_link phone_header_link">
+                            <div class="home-sci">
+                                <a href="https://t.me/+9P9p2BiybwwyZWZi "><i class='bx bxl-telegram header-icon'></i></a>
+                                <p>Telegram</p>
+                            </div>
+                        </div>
+                        <div class="header_link phone_header_link">
+                            <div class="home-sci">
+                                <a href="https://discord.gg/UYZDYfTA"><i class='bx bxl-discord header-icon'></i></a>
+                                <p>Discord</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- A STATIC BACKGROUND -->
+
+        <div class="background-image" id="birds"></div>
+
+    </section>
+
+
+    <section>
+
+        <!-- A QUOTE PART -->
+
+        <div class="quote-container" >
+            <div class="quote-content">
+                <div class="typewriter" id="daily-quote">
+                    <p>{{ DailyQuote.text }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO BOXES -->
+        
+
+        <div class="final-block">
+            <div class="final-block-info-container">
+                <div class="final-block-info-container-part"><h1>What is the purpose of ChillTime?</h1></div>
+                
+                <div class="final-block-info-container-part">
+                <p>
+                    We are really grateful that you found this place! 
+                    <br>
+                    If you feel yourself exhausted and tired with your work/school/university, this place is for you!
+                    <br>
+                    It will serve you as a halt on your life path.
+                    Calm down and Enjoy your time here! Take a rest from the outer world’s problem! Find new friends and soulmates!
+                    <br><br>
+                    Make yourself some tea, turn  on the music and let the time stop!
+                </p>
+                </div>
+            </div>
+        </div>
+
+        {% for box in InformationBox %}
+
+            <div class="container reveal fade-{{ box.side }}">
+
+                <div class="info-container">
+                    <h1 class="info-title">{{ box.title }}</h1>
+                    <p class="info-text">{{ box.main_text }}</p>
+                </div>
+
+                <div class="info-img">
+                    <img src="{{ box.box_img.url }}" alt="Your Image">
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        <div class="container reveal fade-left">
+
+            <div class="info-container">
+                <h1 class="info-title">Activities</h1>
+            </div>
+            <div class="info-img">
+                <img src="/media/clubs.png" alt="Your Image">
+            </div>
+            <div class="info-container">
+                <p class="info-text">
+                    Join our clubs where you can become part of communities of your interests!
+                    <br><br>
+                    -You like spending your nights sitting next to your PC/console?    
+                         Join the video games club
+                    <br>
+                    -Fascinated by your favorite book ending?
+                         Talk about it in a BookWorms club
+                    <br>
+                    -Find someone to discuss or watch a movie/anime with you!
+                    <br>
+                    -Show your talent in our art-station and explore the works of others!
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="container reveal fade-right">
+            
+            
+
+            <div class="info-container">
+                <h1 class="info-title">Unique features</h1>
+            </div>
+
+            <div class="info-img">
+                <img src="/media/fon.png" alt="Your Image">
+            </div>
+
+            <div class="info-container">
+                <p class="info-text">
+                    -Talk with the AI about your feelings 
+                    <br>
+                    -Open your soul to us in anonymous confessions or seek for help in open discussions
+                    <br>
+                    -Listen to 24/7 Lofi Music
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <!-- FEEDBACK -->
+
+        <div class="feedback-container">
+            <div class="feedback-content">
+                <p>Feedbacks</p>
+            </div>
+        </div>
+
+
+        <div class="testimonial">
+            <div class="small-container">
+                <div class="row">
+
+                    {% for feedback in Feedback %}
+
+                    <div class="col-3">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>{{ feedback.feedback_text }}</p>
+                        <img src="{{ feedback.feedback_img.url }}">
+                        <h3>{{ feedback.name }}</h3>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+        <!-- FOOTER -->
+
+    <footer>
+        <div id="footer-links">
+            <div><a href="#" class="footer_link">Support us</a></div>
+            <div><a href="{% url 'contact_us' %}" class="footer_link">Leave feedback</a></div>
+            <div><a href="{% url 'credits' %}" class="footer_link">Credits</a></div>
+        </div>
+
+        <div>
+            <div><p id="all-rights-reserved">© All rights reserved</p></div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-abcdef123456789" crossorigin="anonymous"></script>
+    <script src="static/index/scripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js" integrity="sha512-/WaZCC76Yn6MLEoK6b9np9yiLBet/RngBS33X1P0SHuag6j2E0e5rT7jbA2CvXCydN6+FkDYNx8FBM+vkzsthw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="static/three.min.js"></script>
+    <script src="static/vanta.birds.min.js"></script>
+    <script>
+        VANTA.BIRDS({
+          el: "#birds",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x1B556F,
+          quantity: 4.00,
+          backgroundAlpha: 0
+        })
+        </script>
+    
+</body>
+</html>

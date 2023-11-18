@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/credits/css/credits.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Verdana">
+    <script src="https://kit.fontawesome.com/8a134efa8c.js" crossorigin="anonymous"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Credits</title>
+</head>
+<body>
+    
+    <div class="background-image" id="birds"></div>
+
+    <section>
+        <header>
+            <div class="pc_header">
+                <div class="header_link">
+                    <div class="home-sci">
+                        <a href="https://t.me/+9P9p2BiybwwyZWZi "><i class='bx bxl-telegram header-icon'></i></a>
+                        <p>Telegram</p>
+                    </div>
+                </div>
+
+                <div id="square-quote">
+                    <p>ChillTime</p>
+                </div>
+
+
+                <div class="header_link">
+                    <div class="home-sci">
+                        <a href="https://discord.gg/UYZDYfTA"><i class='bx bxl-discord header-icon'></i></a>
+                        <p>Discord</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone_header">
+                <div id="square-quote" class="phone_header_square_quote">
+                    <p>ChillTime</p>
+                </div>
+
+                <div class="phone_header_link_container">
+                        <div class="header_link phone_header_link">
+                            <div class="home-sci">
+                                <a href="https://t.me/+9P9p2BiybwwyZWZi "><i class='bx bxl-telegram header-icon'></i></a>
+                                <p>Telegram</p>
+                            </div>
+                        </div>
+                        <div class="header_link phone_header_link">
+                            <div class="home-sci">
+                                <a href="https://discord.gg/UYZDYfTA"><i class='bx bxl-discord header-icon'></i></a>
+                                <p>Discord</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="testimonial">
+            <div class="small-container">
+                <div class="row">
+                    {% for credit in Credits %}
+
+                    <div class="col-3">
+                        <h2>Name: {{ credit.name }}</h2>
+                        <h4>Position: {{ credit.position }}</h4>
+                        <img src="{{ credit.box_img.url }}">
+                        <a href="{{ credit.link }}"><p>Read More</p></a>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div id="footer-links">
+            <div><a href="#" class="footer_link">Support us</a></div>
+            <div><a href="{% url 'contact_us' %}" class="footer_link">Leave feedback</a></div>
+            <div><a href="{% url 'index' %}" class="footer_link">Home</a></div>
+        </div>
+
+        <div>
+            <div><p id="all-rights-reserved">© All rights reserved</p></div>
+        </div>
+    </footer>
+    <script src="/static/three.min.js"></script>
+    <script src="/static/vanta.birds.min.js"></script>
+    <script>
+        VANTA.BIRDS({
+          el: "#birds",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x1B556F,
+          quantity: 4.00,
+          backgroundAlpha: 0
+        })
+        </script>
+</body>
+</html>
